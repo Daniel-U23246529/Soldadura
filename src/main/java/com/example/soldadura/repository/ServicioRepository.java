@@ -1,10 +1,9 @@
 package com.example.soldadura.repository;
 
-import com.example.soldadura.model.cliente;
-import com.example.soldadura.model.servicio;
+import com.example.soldadura.model.Servicio;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ServicioRepository  extends JpaRepository<servicio, Integer> {
+public interface ServicioRepository  extends JpaRepository<Servicio, Integer> {
 }
