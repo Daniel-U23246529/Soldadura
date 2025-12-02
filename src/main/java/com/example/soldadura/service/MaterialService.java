@@ -25,11 +25,21 @@ public class MaterialService {
     }
 
     public Material crearMaterial(Material material) {
+        if (material.getCosto_unitario() != null) {
+            material.setCosto_total(material.getCantidad() * material.getCosto_unitario());
+        } else if (material.getCosto_total() == null) {
+            material.setCosto_total(0.0);
+        }
         return materialRepository.save(material);
     }
 
     public Material actualizarMaterial(Long id, Material material) {
         material.setId(id);
+        if (material.getCosto_unitario() != null) {
+            material.setCosto_total(material.getCantidad() * material.getCosto_unitario());
+        } else if (material.getCosto_total() == null) {
+            material.setCosto_total(0.0);
+        }
         return materialRepository.save(material);
     }
 

@@ -1,9 +1,12 @@
 package com.example.soldadura.service;
 
+import com.example.soldadura.model.Factura;
 import com.example.soldadura.model.OrdenCompra;
 import com.example.soldadura.repository.OrdenCompraRepository;
+import com.example.soldadura.util.Codigo;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +28,15 @@ public class OrdenCompraService {
     }
 
     public OrdenCompra crearOrdenCompra(OrdenCompra ordenCompra) {
+        OrdenCompra ultima = ordenCompraRepository.findTopByOrderByIdDesc();
+        int siguienteId;
+        if (ultima == null) {
+            siguienteId = 1;
+        } else {
+            siguienteId = Math.toIntExact(ultima.getId() + 1);
+        }
+        ultima.setNumero_orden(new Codigo().generarCodigo("FTC", siguienteId));
+        ordenCompra.setFecha_emision(new Date());
         return ordenCompraRepository.save(ordenCompra);
     }
 

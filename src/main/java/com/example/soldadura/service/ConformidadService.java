@@ -4,6 +4,7 @@ import com.example.soldadura.model.Conformidad;
 import com.example.soldadura.repository.ConformidadRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +26,7 @@ public class ConformidadService {
     }
 
     public Conformidad crearConformidad(Conformidad conformidad) {
+        conformidad.setFecha(new Date());
         return conformidadRepository.save(conformidad);
     }
 
