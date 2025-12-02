@@ -94,7 +94,7 @@ Content-Type: application/json
 
 ### ACTUALIZAR PROYECTO MATERIALES
 
-PUT http://localhost:8084/api/proyecto/{id}
+PUT http://localhost:8084/api/proyecto/1
 Content-Type: application/json
 
 {

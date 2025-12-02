@@ -30,9 +30,21 @@ public class ProyectoService {
         return proyectoRepository.save(proyecto);
     }
 
-    public Proyecto actualizarProyecto(Long id, Proyecto proyecto) {
-        proyecto.setId(id);
-        return proyectoRepository.save(proyecto);
+    public Proyecto actualizarProyecto(Long id, Proyecto proyectoActualizado) {
+        Proyecto proyectoExistente = proyectoRepository.findById(Math.toIntExact(id))
+                .orElseThrow(() -> new RuntimeException("Proyecto no encontrado"));
+
+        proyectoExistente.setCliente(proyectoActualizado.getCliente());
+        proyectoExistente.setServicio(proyectoActualizado.getServicio());
+        proyectoExistente.setEstado(proyectoActualizado.isEstado());
+        proyectoExistente.setFechaCreado(proyectoExistente.getFechaCreado());
+
+        if (proyectoActualizado.getMateriales() != null) {
+            proyectoActualizado.getMateriales().forEach(m -> m.setProyecto(proyectoExistente));
+            proyectoExistente.setMateriales(proyectoActualizado.getMateriales());
+        }
+
+        return proyectoRepository.save(proyectoExistente);
     }
 
     public void eliminarProyecto(Long id) {

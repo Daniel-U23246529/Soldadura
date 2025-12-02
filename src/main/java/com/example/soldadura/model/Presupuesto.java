@@ -12,7 +12,6 @@ public class Presupuesto {
 
     @OneToOne
     @JoinColumn(name = "proyecto_id", nullable = false)
-    @JsonBackReference
     private Proyecto proyecto;
 
     @Column(nullable = false)

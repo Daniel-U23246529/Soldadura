@@ -1,5 +1,6 @@
 package com.example.soldadura.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -19,7 +20,7 @@ public class Servicio {
     private String descripcion;
 
     @OneToMany(mappedBy = "servicio", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonIgnore
     private List<Proyecto> proyectos = new ArrayList<>();
 
     public Servicio() {

@@ -31,7 +31,7 @@ public class ProyectoController {
 
     @PostMapping
     public ResponseEntity<?> crearProyecto(@RequestBody Proyecto proyecto) {
-
+        System.out.println(proyecto.getServicio());
         if (proyecto == null) {
             return ResponseEntity.badRequest().body("No se recibió ningún proyecto");
         }
