@@ -1,5 +1,6 @@
 package com.example.soldadura.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -14,6 +15,7 @@ public class Conformidad {
 
     @OneToOne
     @JoinColumn(name = "proyecto_id",nullable = false)
+    @JsonManagedReference
     private Proyecto proyecto;
 
     @Column(nullable = false)

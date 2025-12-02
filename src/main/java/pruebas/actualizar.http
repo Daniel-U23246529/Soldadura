@@ -1,0 +1,118 @@
+### ACTUALIZAR CLIENTE
+PUT http://localhost:8084/api/cliente/1
+Content-Type: application/json
+
+{
+  "nombre": "Juan Pérez Actualizado",
+  "ruc": "20123456789",
+  "direccion": "Av. Siempre Viva 456",
+  "telefono": "987654321",
+  "email": "juanp@example.com"
+}
+
+### ACTUALIZAR SERVICIO
+PUT http://localhost:8084/api/servicio/1
+Content-Type: application/json
+
+{
+  "nombre": "Soldadura TIG",
+  "descripcion": "Servicio de soldadura TIG profesional"
+}
+
+### ACTUALIZAR PROYECTO
+PUT http://localhost:8084/api/proyecto/1
+Content-Type: application/json
+
+{
+  "cliente": {"id": 1},
+  "servicio": {"id": 1},
+  "fechaCreado": "2025-12-02",
+  "estado": false
+}
+
+### ACTUALIZAR MATERIAL
+PUT http://localhost:8084/api/material/1
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Acero Inoxidable",
+  "cantidad": 12,
+  "unidades": "kg",
+  "costo_unitario": 20.0,
+  "costo_total": 240
+}
+
+### ACTUALIZAR PRESUPUESTO
+PUT http://localhost:8084/api/presupuesto/1
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "costo_manoObra": 250,
+  "costo_gastosAdministrativos": 60
+}
+
+### ACTUALIZAR ORDEN COMPRA
+PUT http://localhost:8084/api/orden-compra/1
+Content-Type: application/json
+
+{
+  "presupuesto": {"id": 1},
+  "monto_aprobado": 350
+}
+
+### ACTUALIZAR FACTURA
+PUT http://localhost:8084/api/factura/1
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "descripcion": "Factura actualizada",
+  "monto": 360,
+  "estado_sunat": "Enviado"
+}
+
+### ACTUALIZAR PAGO
+PUT http://localhost:8084/api/pago/1
+Content-Type: application/json
+
+{
+  "factura": {"id": 1},
+  "monto_pagado": 360,
+  "metodo_pago": "Efectivo"
+}
+
+### ACTUALIZAR CONFORMIDAD
+PUT http://localhost:8084/api/conformidad/1
+Content-Type: application/json
+
+{
+  "supervisor": "Carlos López",
+  "comentarios": "Revisado y aprobado"
+}
+
+### ACTUALIZAR PROYECTO MATERIALES
+
+PUT http://localhost:8084/api/proyecto/{id}
+Content-Type: application/json
+
+{
+  "cliente": {"id": 1},
+  "servicio": {"id": 1},
+  "materiales": [
+    {
+      "nombre": "Acero",
+      "cantidad": 10,
+      "unidades": "kg",
+      "costo_unitario": 15.5
+    },
+    {
+      "nombre": "Soldadura",
+      "cantidad": 5,
+      "unidades": "kg",
+      "costo_unitario": 25
+    }
+  ],
+  "estado": true
+}

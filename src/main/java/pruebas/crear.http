@@ -1,0 +1,244 @@
+### CREAR CLIENTE
+POST http://localhost:8084/api/cliente
+Content-Type: application/json
+
+{
+  "nombre": "Juan Perez",
+  "ruc": "20123456789",
+  "direccion": "Av. Siempre Viva 123",
+  "telefono": "987654321",
+  "email": "juan@example.com"
+}
+
+<> 2025-12-02T062804.201.json
+<> 2025-12-02T062501.201.json
+
+### CREAR SERVICIO
+POST http://localhost:8084/api/servicio
+Content-Type: application/json
+
+{
+  "nombre": "Soldadura MIG",
+  "descripcion": "Servicio de soldadura MIG profesional"
+}
+
+<> 2025-12-02T062807.200.json
+<> 2025-12-02T062503.200.json
+
+### CREAR PROYECTO
+POST http://localhost:8084/api/proyecto
+Content-Type: application/json
+
+{
+  "cliente": {"id": 1},
+  "servicio": {"id": 1},
+  "estado": true
+}
+
+<> 2025-12-02T062810.200.json
+<> 2025-12-02T062514.200.json
+<> 2025-12-02T062506.200.json
+
+### CREAR MATERIAL
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Acero",
+  "cantidad": 10,
+  "unidades": "kg",
+  "costo_unitario": 15.5,
+  "costo_total": 155
+}
+
+<> 2025-12-02T062813.200.json
+<> 2025-12-02T062517.200.json
+
+### CREAR PRESUPUESTO
+POST http://localhost:8084/api/presupuesto
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "costo_manoObra": 200,
+  "costo_gastosAdministrativos": 50
+}
+
+<> 2025-12-02T062817.200.json
+<> 2025-12-02T062520.200.json
+
+### CREAR ORDEN COMPRA
+POST http://localhost:8084/api/orden-compra
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "presupuesto": {"id": 1},
+  "monto_aprobado": 300
+}
+
+<> 2025-12-02T062820.200.json
+<> 2025-12-02T062541.500.json
+<> 2025-12-02T062522.404.json
+
+### CREAR FACTURA
+POST http://localhost:8084/api/factura
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "descripcion": "Factura por soldadura MIG",
+  "monto": 350,
+  "estado_sunat": "Pendiente"
+}
+
+<> 2025-12-02T062823.200.json
+
+### CREAR PAGO
+POST http://localhost:8084/api/pago
+Content-Type: application/json
+
+{
+  "factura": {"id": 1},
+  "monto_pagado": 360,
+  "metodo_pago": "Tarjeta"
+}
+
+<> 2025-12-02T062830.200.json
+<> 2025-12-02T062826.200.json
+
+### CREAR CONFORMIDAD
+POST http://localhost:8084/api/conformidad
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "supervisor": "Carlos López",
+  "comentarios": "Todo correcto"
+}
+
+<> 2025-12-02T062832.200.json
+
+
+
+#Creacion de materiales
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Acero Inoxidable 304",
+  "cantidad": 15,
+  "unidades": "kg",
+  "costo_unitario": 25.50
+}
+
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Electrodos E6011",
+  "cantidad": 50,
+  "unidades": "unidades",
+  "costo_unitario": 2.80
+}
+
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Tubería de Acero 2 pulgadas",
+  "cantidad": 20,
+  "unidades": "metros",
+  "costo_unitario": 18.75
+}
+
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Placa de Acero A36",
+  "cantidad": 8,
+  "unidades": "unidades",
+  "costo_unitario": 120.00
+}
+
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Gas Argón para TIG",
+  "cantidad": 2,
+  "unidades": "cilindros",
+  "costo_unitario": 180.00
+}
+
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Alambre MIG ER70S-6",
+  "cantidad": 10,
+  "unidades": "kg",
+  "costo_unitario": 12.50
+}
+
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Discos de Corte 9 pulgadas",
+  "cantidad": 30,
+  "unidades": "unidades",
+  "costo_unitario": 4.25
+}
+
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Pintura Anticorrosiva Roja",
+  "cantidad": 5,
+  "unidades": "galones",
+  "costo_unitario": 45.00
+}
+
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Pernos Grado 8 1/2 pulgada",
+  "cantidad": 100,
+  "unidades": "unidades",
+  "costo_unitario": 0.85
+}
+
+###
+POST http://localhost:8084/api/material
+Content-Type: application/json
+
+{
+  "proyecto": {"id": 1},
+  "nombre": "Lija de Grano 80",
+  "cantidad": 25,
+  "unidades": "pliegos",
+  "costo_unitario": 1.50
+}

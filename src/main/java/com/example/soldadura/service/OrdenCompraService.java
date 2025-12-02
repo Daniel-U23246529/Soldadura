@@ -35,7 +35,7 @@ public class OrdenCompraService {
         } else {
             siguienteId = Math.toIntExact(ultima.getId() + 1);
         }
-        ultima.setNumero_orden(new Codigo().generarCodigo("FTC", siguienteId));
+        ordenCompra.setNumero_orden(new Codigo().generarCodigo("FTC", siguienteId));
         ordenCompra.setFecha_emision(new Date());
         return ordenCompraRepository.save(ordenCompra);
     }

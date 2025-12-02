@@ -1,5 +1,6 @@
 package com.example.soldadura.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,6 +12,7 @@ public class Material {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "proyecto_id", nullable = false)
+    @JsonBackReference
     private Proyecto proyecto;
 
     @Column(nullable = false)

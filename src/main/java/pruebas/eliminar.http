@@ -1,0 +1,26 @@
+### ELIMINAR CLIENTE
+DELETE http://localhost:8084/api/cliente/1
+
+### ELIMINAR SERVICIO
+DELETE http://localhost:8084/api/servicio/1
+
+### ELIMINAR PROYECTO
+DELETE http://localhost:8084/api/proyecto/1
+
+### ELIMINAR MATERIAL
+DELETE http://localhost:8084/api/material/1
+
+### ELIMINAR PRESUPUESTO
+DELETE http://localhost:8084/api/presupuesto/1
+
+### ELIMINAR ORDEN COMPRA
+DELETE http://localhost:8084/api/ordenCompra/1
+
+### ELIMINAR FACTURA
+DELETE http://localhost:8084/api/factura/1
+
+### ELIMINAR PAGO
+DELETE http://localhost:8084/api/pago/1
+
+### ELIMINAR CONFORMIDAD
+DELETE http://localhost:8084/api/conformidad/1

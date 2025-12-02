@@ -41,9 +41,6 @@ public class ProyectoController {
         if (proyecto.getServicio() == null) {
             return ResponseEntity.badRequest().body("El servicio es obligatorio");
         }
-        if (proyecto.getFechaCreado() == null) {
-            return ResponseEntity.badRequest().body("La fecha de creación es obligatoria");
-        }
 
         Proyecto nuevoProyecto = proyectoService.crearProyecto(proyecto);
         return ResponseEntity.ok(nuevoProyecto);
@@ -52,17 +49,11 @@ public class ProyectoController {
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarProyecto(@PathVariable Long id, @RequestBody Proyecto proyecto) {
 
-        if (proyecto == null) {
-            return ResponseEntity.badRequest().body("No se recibió ningún proyecto");
-        }
         if (proyecto.getCliente() == null) {
             return ResponseEntity.badRequest().body("El cliente es obligatorio");
         }
         if (proyecto.getServicio() == null) {
             return ResponseEntity.badRequest().body("El servicio es obligatorio");
-        }
-        if (proyecto.getFechaCreado() == null) {
-            return ResponseEntity.badRequest().body("La fecha de creación es obligatoria");
         }
 
         return ResponseEntity.ok(proyectoService.actualizarProyecto(id, proyecto));

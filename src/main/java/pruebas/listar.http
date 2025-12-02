@@ -1,0 +1,53 @@
+### LISTAR TODOS LOS CLIENTES
+GET http://localhost:8084/api/cliente
+
+### BUSCAR CLIENTE POR ID
+GET http://localhost:8084/api/cliente/1
+
+### LISTAR TODOS LOS SERVICIOS
+GET http://localhost:8084/api/servicio
+
+### BUSCAR SERVICIO POR ID
+GET http://localhost:8084/api/servicio/1
+
+### LISTAR TODOS LOS PROYECTOS
+GET http://localhost:8084/api/proyecto
+
+### BUSCAR PROYECTO POR ID
+GET http://localhost:8084/api/proyecto/1
+
+### LISTAR TODOS LOS MATERIALES
+GET http://localhost:8084/api/material
+
+### BUSCAR MATERIAL POR ID
+GET http://localhost:8084/api/material/1
+
+### LISTAR TODOS LOS PRESUPUESTOS
+GET http://localhost:8084/api/presupuesto
+
+### BUSCAR PRESUPUESTO POR ID
+GET http://localhost:8084/api/presupuesto/1
+
+### LISTAR TODAS LAS ORDENES COMPRA
+GET http://localhost:8084/api/orden-compra
+
+### BUSCAR ORDEN COMPRA POR ID
+GET http://localhost:8084/api/orden-compra/1
+
+### LISTAR TODAS LAS FACTURAS
+GET http://localhost:8084/api/factura
+
+### BUSCAR FACTURA POR ID
+GET http://localhost:8084/api/factura/1
+
+### LISTAR TODOS LOS PAGOS
+GET http://localhost:8084/api/pago
+
+### BUSCAR PAGO POR ID
+GET http://localhost:8084/api/pago/1
+
+### LISTAR TODAS LAS CONFORMIDADES
+GET http://localhost:8084/api/conformidad
+
+### BUSCAR CONFORMIDAD POR ID
+GET http://localhost:8084/api/conformidad/1

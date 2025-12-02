@@ -47,9 +47,6 @@ public class OrdenCompraController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarOrden(@PathVariable Long id, @RequestBody OrdenCompra ordenCompra) {
-        if (ordenCompra.getProyecto() == null) {
-            return ResponseEntity.badRequest().body("El proyecto es obligatorio");
-        }
         if (ordenCompra.getPresupuesto() == null) {
             return ResponseEntity.badRequest().body("El presupuesto es obligatorio");
         }

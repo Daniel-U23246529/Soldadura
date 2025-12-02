@@ -4,6 +4,7 @@ import com.example.soldadura.model.Proyecto;
 import com.example.soldadura.repository.ProyectoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +26,7 @@ public class ProyectoService {
     }
 
     public Proyecto crearProyecto(Proyecto proyecto) {
+        proyecto.setFechaCreado(new Date());
         return proyectoRepository.save(proyecto);
     }
 

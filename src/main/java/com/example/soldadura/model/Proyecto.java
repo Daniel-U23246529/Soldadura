@@ -1,7 +1,10 @@
 package com.example.soldadura.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,22 +22,29 @@ public class Proyecto {
 
     @ManyToOne
     @JoinColumn(name = "servicio_id", nullable = false)
+    @JsonBackReference
     private Servicio servicio;
 
-    @OneToMany(mappedBy = "proyecto", cascade = CascadeType.ALL)
-    private List<Material> materiales;
-
     @OneToOne(mappedBy = "proyecto", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private OrdenCompra ordenCompra;
 
     @OneToOne(mappedBy = "proyecto", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Conformidad conformidad;
 
     @OneToOne(mappedBy = "proyecto", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Presupuesto presupuesto;
 
     @OneToMany(mappedBy = "proyecto", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Factura> facturas;
+
+    @OneToMany(mappedBy = "proyecto", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Material> materiales = new ArrayList<>();;
+
 
     @Column(nullable = false)
     private Date fechaCreado;

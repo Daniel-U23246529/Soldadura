@@ -1,5 +1,6 @@
 package com.example.soldadura.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -17,11 +18,9 @@ public class Servicio {
 
     private String descripcion;
 
-
-    //obtener directamente todos los proyectos que se han realizado de un servicio
     @OneToMany(mappedBy = "servicio", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Proyecto> proyectos = new ArrayList<>();
-    //***************************************************************
 
     public Servicio() {
     }

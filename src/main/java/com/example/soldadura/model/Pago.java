@@ -1,5 +1,6 @@
 package com.example.soldadura.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -13,6 +14,7 @@ public class Pago {
 
     @ManyToOne
     @JoinColumn(name = "factura_id",nullable = false)
+    @JsonBackReference
     private Factura factura;
 
     private Date fecha_pago;
