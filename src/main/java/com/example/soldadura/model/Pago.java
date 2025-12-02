@@ -25,6 +25,15 @@ public class Pago {
     public Pago() {
     }
 
+    //Constructor con parámetros
+    public Pago(Long id, Factura factura, Date fecha_pago, double monto_pagado, String metodo_pago) {
+        this.id = id;
+        this.factura = factura;
+        this.fecha_pago = fecha_pago;
+        this.monto_pagado = monto_pagado;
+        this.metodo_pago = metodo_pago;
+    }
+
     public Long getId() {
         return id;
     }

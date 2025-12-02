@@ -23,6 +23,15 @@ public class Cliente {
 
     public Cliente() {
     }
+//Constructor con parámetros
+    public Cliente(Long id, String nombre, String ruc, String direccion, String telefono, String email) {
+        this.id = id;
+        this.nombre = nombre;
+        this.ruc = ruc;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+    }
 
     public Long getId() {
         return id;

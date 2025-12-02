@@ -28,6 +28,15 @@ public class Conformidad {
     public Conformidad() {
     }
 
+    //Constructor con parámetros
+    public Conformidad(Long id, Proyecto proyecto, Date fecha, String supervisor, String comentarios) {
+        this.id = id;
+        this.proyecto = proyecto;
+        this.fecha = fecha;
+        this.supervisor = supervisor;
+        this.comentarios = comentarios;
+    }
+
     public Long getId() {
         return id;
     }

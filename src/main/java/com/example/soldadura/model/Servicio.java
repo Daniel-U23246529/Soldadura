@@ -18,6 +18,13 @@ public class Servicio {
     public Servicio() {
     }
 
+    //Constructor con parámetros
+    public Servicio(Long id, String nombre, String descripcion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
     public Long getId() {
         return id;
     }

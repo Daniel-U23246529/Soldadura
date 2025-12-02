@@ -32,6 +32,17 @@ public class Factura {
     public Factura() {
     }
 
+    //Constructor con parámetros
+    public Factura(Long id, Proyecto proyecto, String numero_factura, String descripcion, double monto, Date fecha_emision, String estado_sunat) {
+        this.id = id;
+        this.proyecto = proyecto;
+        this.numero_factura = numero_factura;
+        this.descripcion = descripcion;
+        this.monto = monto;
+        this.fecha_emision = fecha_emision;
+        this.estado_sunat = estado_sunat;
+    }
+
     public Long getId() {
         return id;
     }

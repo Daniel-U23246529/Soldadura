@@ -29,6 +29,15 @@ public class OrdenCompra {
     public OrdenCompra() {
     }
 
+    //Constructor con parámetros
+    public OrdenCompra(Long id, Proyecto proyecto, String numero_orden, Date fecha_emision, double monto_aprobado) {
+        this.id = id;
+        this.proyecto = proyecto;
+        this.numero_orden = numero_orden;
+        this.fecha_emision = fecha_emision;
+        this.monto_aprobado = monto_aprobado;
+    }
+
     public double getMonto_aprobado() {
         return monto_aprobado;
     }

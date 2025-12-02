@@ -25,6 +25,15 @@ public class Presupuesto {
     public Presupuesto() {
     }
 
+    //Constructor con parámetros
+    public Presupuesto(Long id, Proyecto proyecto, double costo_materiales, double costo_manoObra, double costo_gastosAdministtrativos) {
+        this.id = id;
+        this.proyecto = proyecto;
+        this.costo_materiales = costo_materiales;
+        this.costo_manoObra = costo_manoObra;
+        this.costo_gastosAdministtrativos = costo_gastosAdministtrativos;
+    }
+
     public Long getId() {
         return id;
     }

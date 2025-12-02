@@ -45,6 +45,20 @@ public class Proyecto {
 
     }
 
+    //Constructor con parámetros
+    public Proyecto(Long id, Cliente cliente, Servicio servicio, List<Material> materiales, OrdenCompra ordenCompra, Conformidad conformidad, Presupuesto presupuesto, List<Factura> facturas, Date fechaCreado, boolean estado) {
+        this.id = id;
+        this.cliente = cliente;
+        this.servicio = servicio;
+        this.materiales = materiales;
+        this.ordenCompra = ordenCompra;
+        this.conformidad = conformidad;
+        this.presupuesto = presupuesto;
+        this.facturas = facturas;
+        this.fechaCreado = fechaCreado;
+        this.estado = estado;
+    }
+
     public Long getId() {
         return id;
     }

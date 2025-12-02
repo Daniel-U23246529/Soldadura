@@ -24,7 +24,19 @@ public class Material {
 
     @Column(nullable = false)
     private double costo_unitario;
+
+
     public Material() {
+    }
+
+    //Constructor con parámetros
+    public Material(Long id, Proyecto proyecto, String nombre, double cantidad, String unidades, double costo_unitario) {
+        this.id = id;
+        this.proyecto = proyecto;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.unidades = unidades;
+        this.costo_unitario = costo_unitario;
     }
 
     public Long getId() {
