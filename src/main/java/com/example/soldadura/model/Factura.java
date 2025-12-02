@@ -2,6 +2,7 @@ package com.example.soldadura.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -15,7 +16,7 @@ public class Factura {
     @JoinColumn(name = "proyecto_id",nullable = false)
     private Proyecto proyecto;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String numero_factura;
 
     private String descripcion;
@@ -24,7 +25,7 @@ public class Factura {
     private double monto;
 
     @Column(nullable = false)
-    private Date fecha_emision;
+    private LocalDate fecha_emision;
 
     @Column(nullable = false)
     private String estado_sunat;
@@ -33,7 +34,7 @@ public class Factura {
     }
 
     //Constructor con parámetros
-    public Factura(Long id, Proyecto proyecto, String numero_factura, String descripcion, double monto, Date fecha_emision, String estado_sunat) {
+    public Factura(Long id, Proyecto proyecto, String numero_factura, String descripcion, double monto, LocalDate fecha_emision, String estado_sunat) {
         this.id = id;
         this.proyecto = proyecto;
         this.numero_factura = numero_factura;
@@ -83,11 +84,11 @@ public class Factura {
         this.monto = monto;
     }
 
-    public Date getFecha_emision() {
+    public LocalDate getFecha_emision() {
         return fecha_emision;
     }
 
-    public void setFecha_emision(Date fecha_emision) {
+    public void setFecha_emision(LocalDate fecha_emision) {
         this.fecha_emision = fecha_emision;
     }
 

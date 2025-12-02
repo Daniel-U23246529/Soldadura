@@ -37,13 +37,19 @@ public class FacturaService {
         }
 
         factura.setNumero_factura(new Codigo().generarCodigo("FTC", siguienteId));
-        factura.setFecha_emision(new Date());
+        factura.setFecha_emision(LocalDate.now());
         return facturaRepository.save(factura);
     }
 
     public Factura actualizarFactura(Long id, Factura factura) {
-        factura.setId(id);
-        return facturaRepository.save(factura);
+        Factura facturaExistente = facturaRepository.findById(Math.toIntExact(id))
+                .orElseThrow(() -> new RuntimeException("Factura no encontrada con ID: " + id));
+
+        facturaExistente.setDescripcion(factura.getDescripcion());
+        facturaExistente.setEstado_sunat(factura.getEstado_sunat());
+
+        return facturaRepository.save(facturaExistente);
+
     }
 
     public void eliminarFactura(Long id) {

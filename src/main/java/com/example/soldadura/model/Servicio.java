@@ -2,6 +2,9 @@ package com.example.soldadura.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "Servicio")
 public class Servicio {
@@ -14,6 +17,11 @@ public class Servicio {
 
     private String descripcion;
 
+
+    //obtener directamente todos los proyectos que se han realizado de un servicio
+    @OneToMany(mappedBy = "servicio", cascade = CascadeType.ALL)
+    private List<Proyecto> proyectos = new ArrayList<>();
+    //***************************************************************
 
     public Servicio() {
     }

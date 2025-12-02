@@ -9,7 +9,7 @@ public class Material {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "proyecto_id", nullable = false)
     private Proyecto proyecto;
 
