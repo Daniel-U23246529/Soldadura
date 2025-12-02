@@ -1,6 +1,7 @@
 package com.example.soldadura.model;
 
 import jakarta.persistence.*;
+
 import java.util.Date;
 import java.util.List;
 
@@ -138,4 +139,5 @@ public class Proyecto {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
 }

@@ -15,7 +15,6 @@ public class Pago {
     @JoinColumn(name = "factura_id",nullable = false)
     private Factura factura;
 
-    @Column(nullable = false)
     private Date fecha_pago;
 
     private double monto_pagado;
