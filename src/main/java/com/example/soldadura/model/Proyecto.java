@@ -44,7 +44,6 @@ public class Proyecto {
     public Proyecto() {
 
     }
-
     //Constructor con parámetros
     public Proyecto(Long id, Cliente cliente, Servicio servicio, List<Material> materiales, OrdenCompra ordenCompra, Conformidad conformidad, Presupuesto presupuesto, List<Factura> facturas, Date fechaCreado, boolean estado) {
         this.id = id;

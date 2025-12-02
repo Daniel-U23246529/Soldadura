@@ -10,32 +10,33 @@ import java.util.Optional;
 @Service
 public class ClienteService {
 
-    private final ClienteRepository clienteService;
+    private final ClienteRepository clienteRepository;
 
-    public ClienteService(ClienteRepository clienteService) {
-        this.clienteService = clienteService;
+    public ClienteService(ClienteRepository clienteRepository) {
+        this.clienteRepository = clienteRepository;
     }
 
-    public List<Cliente> listarTodas() {
-        return clienteService.findAll();
+    //pa listar
+    public List<Cliente> listarTodos() {
+        return clienteRepository.findAll();
     }
 
+    //pa buscar por id
     public Optional<Cliente> buscarPorId(Long id) {
-        return clienteService.findById(Math.toIntExact(id));
+        return clienteRepository.findById(id);
     }
 
-    public Cliente crearCombinado(Cliente combinado) {
-        return clienteService.save(combinado);
+    //
+    public Cliente crearCliente(Cliente cliente) {
+        return clienteRepository.save(cliente);
     }
 
-    public Cliente actualizarCombinado(Long id, Cliente combinado) {
-        combinado.setId(id);
-        return clienteService.save(combinado);
+    public Cliente actualizarCliente(Long id, Cliente cliente) {
+        cliente.setId(id);
+        return clienteRepository.save(cliente);
     }
 
-    public void eliminarCombinado(Long id) {
-        clienteService.deleteById(Math.toIntExact(id));
+    public void eliminarCliente(Long id) {
+        clienteRepository.deleteById(id);
     }
-
-
 }

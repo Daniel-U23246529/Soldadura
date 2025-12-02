@@ -13,6 +13,7 @@ public class Cliente {
     @Column(nullable = false)
     private String nombre;
 
+    @Column(unique = true, length = 11)
     private String ruc;
 
     private String direccion;
