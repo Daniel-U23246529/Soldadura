@@ -22,9 +22,46 @@ public class Pago {
 
     private String metodo_pago;
 
-
-
-
     public Pago() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Factura getFactura() {
+        return factura;
+    }
+
+    public void setFactura(Factura factura) {
+        this.factura = factura;
+    }
+
+    public Date getFecha_pago() {
+        return fecha_pago;
+    }
+
+    public void setFecha_pago(Date fecha_pago) {
+        this.fecha_pago = fecha_pago;
+    }
+
+    public double getMonto_pagado() {
+        return monto_pagado;
+    }
+
+    public void setMonto_pagado(double monto_pagado) {
+        this.monto_pagado = monto_pagado;
+    }
+
+    public String getMetodo_pago() {
+        return metodo_pago;
+    }
+
+    public void setMetodo_pago(String metodo_pago) {
+        this.metodo_pago = metodo_pago;
     }
 }
