@@ -33,9 +33,25 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<Cliente> crearCliente(@RequestBody Cliente cliente){
+    public ResponseEntity<?> crearCliente(@RequestBody Cliente cliente){
+
+        if (cliente.getNombre() ==null || cliente.getNombre().trim().isEmpty()){
+            return ResponseEntity.badRequest().body("El campo del nombre es obligatorio");
+        }
+        if (cliente.getRuc() ==null || cliente.getRuc().trim().isEmpty()){
+            return ResponseEntity.badRequest().body("El campo ruc es obligatorio");
+        }
+
+        if (cliente.getDireccion() ==null || cliente.getDireccion().trim().isEmpty()){
+            return ResponseEntity.badRequest().body("El campo direccion es obligatorio");
+        }
+
+        if (cliente.getTelefono() ==null || cliente.getTelefono().trim().isEmpty()){
+            return ResponseEntity.badRequest().body("El campo telefono es obligatorio");
+        }
         Cliente nuevoCliente = clienteService.crearCliente(cliente);
         return new ResponseEntity<>(nuevoCliente, HttpStatus.CREATED);
+
     }
 
     @PutMapping("/{id}")
